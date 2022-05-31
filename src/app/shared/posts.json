@@ -1,0 +1,93 @@
+[
+  {
+    "id": "1",
+    "author": {
+      "id": "4",
+      "firstName": "Jose",
+      "lastName": "Tejada",
+      "email": "jose.tejada@hitachivantara.com",
+      "profileImage": "https://imgs.search.brave.com/GNgCrx-F9aeWTNh80MXp5SgcXv7gODtERCov2qFw3w4/rs:fit:880:769:1/g:ce/aHR0cHM6Ly93d3cu/cGluY2xpcGFydC5j/b20vcGljZGlyL21p/ZGRsZS8xNTctMTU3/ODE4Nl91c2VyLXBy/b2ZpbGUtZGVmYXVs/dC1pbWFnZS1wbmct/Y2xpcGFydC5wbmc",
+      "friends": []
+    },
+    "content": "Whoa this website is awesome!!11!1",
+    "likes": [
+      {
+        "id": "4",
+        "firstName": "Jose",
+        "lastName": "Tejada",
+        "email": "jose.tejada@hitachivantara.com",
+        "profileImage": "https://imgs.search.brave.com/GNgCrx-F9aeWTNh80MXp5SgcXv7gODtERCov2qFw3w4/rs:fit:880:769:1/g:ce/aHR0cHM6Ly93d3cu/cGluY2xpcGFydC5j/b20vcGljZGlyL21p/ZGRsZS8xNTctMTU3/ODE4Nl91c2VyLXBy/b2ZpbGUtZGVmYXVs/dC1pbWFnZS1wbmct/Y2xpcGFydC5wbmc",
+        "friends": []
+      },
+      {
+        "id": "3",
+        "firstName": "Colby",
+        "lastName": "Wall",
+        "email": "colby.wall@hitachivantara.com",
+        "profileImage": "https://imgs.search.brave.com/GNgCrx-F9aeWTNh80MXp5SgcXv7gODtERCov2qFw3w4/rs:fit:880:769:1/g:ce/aHR0cHM6Ly93d3cu/cGluY2xpcGFydC5j/b20vcGljZGlyL21p/ZGRsZS8xNTctMTU3/ODE4Nl91c2VyLXBy/b2ZpbGUtZGVmYXVs/dC1pbWFnZS1wbmct/Y2xpcGFydC5wbmc",
+        "friends": []
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "author": {
+      "id": "3",
+      "firstName": "Colby",
+      "lastName": "Wall",
+      "email": "colby.wall@hitachivantara.com",
+      "profileImage": "https://imgs.search.brave.com/GNgCrx-F9aeWTNh80MXp5SgcXv7gODtERCov2qFw3w4/rs:fit:880:769:1/g:ce/aHR0cHM6Ly93d3cu/cGluY2xpcGFydC5j/b20vcGljZGlyL21p/ZGRsZS8xNTctMTU3/ODE4Nl91c2VyLXBy/b2ZpbGUtZGVmYXVs/dC1pbWFnZS1wbmct/Y2xpcGFydC5wbmc",
+      "friends": []
+    },
+    "content": "Way better than the offbrand social media website...",
+    "likes": [
+      {
+        "id": "4",
+        "firstName": "Jose",
+        "lastName": "Tejada",
+        "email": "jose.tejada@hitachivantara.com",
+        "profileImage": "https://imgs.search.brave.com/GNgCrx-F9aeWTNh80MXp5SgcXv7gODtERCov2qFw3w4/rs:fit:880:769:1/g:ce/aHR0cHM6Ly93d3cu/cGluY2xpcGFydC5j/b20vcGljZGlyL21p/ZGRsZS8xNTctMTU3/ODE4Nl91c2VyLXBy/b2ZpbGUtZGVmYXVs/dC1pbWFnZS1wbmct/Y2xpcGFydC5wbmc",
+        "friends": []
+      },
+      {
+        "id": "3",
+        "firstName": "Colby",
+        "lastName": "Wall",
+        "email": "colby.wall@hitachivantara.com",
+        "profileImage": "https://imgs.search.brave.com/GNgCrx-F9aeWTNh80MXp5SgcXv7gODtERCov2qFw3w4/rs:fit:880:769:1/g:ce/aHR0cHM6Ly93d3cu/cGluY2xpcGFydC5j/b20vcGljZGlyL21p/ZGRsZS8xNTctMTU3/ODE4Nl91c2VyLXBy/b2ZpbGUtZGVmYXVs/dC1pbWFnZS1wbmct/Y2xpcGFydC5wbmc",
+        "friends": []
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "author": {
+      "id": "1",
+      "firstName": "Sean",
+      "lastName": "Dunn",
+      "email": "sean.dunn@hitachivantara.com",
+      "profileImage": "https://imgs.search.brave.com/ROjjNV13VJIT0sqjIQGyfyapwr7PkPXMzYorXXq4GLc/rs:fit:920:756:1/g:ce/aHR0cHM6Ly93d3cu/bmV0Y2xpcGFydC5j/b20vcHAvbS8zNi0z/NjgwNzVfY29sbGVj/dGlvbi1vZi1wbmct/aGlnaC1xdWFsaXR5/LWZyZWUtaGFuZHNv/bWUucG5n",
+      "friends": []
+    },
+    "content": "Typing is SO hard.",
+    "likes": [
+      {
+        "id": "4",
+        "firstName": "Jose",
+        "lastName": "Tejada",
+        "email": "jose.tejada@hitachivantara.com",
+        "profileImage": "https://imgs.search.brave.com/GNgCrx-F9aeWTNh80MXp5SgcXv7gODtERCov2qFw3w4/rs:fit:880:769:1/g:ce/aHR0cHM6Ly93d3cu/cGluY2xpcGFydC5j/b20vcGljZGlyL21p/ZGRsZS8xNTctMTU3/ODE4Nl91c2VyLXBy/b2ZpbGUtZGVmYXVs/dC1pbWFnZS1wbmct/Y2xpcGFydC5wbmc",
+        "friends": []
+      },
+      {
+        "id": "3",
+        "firstName": "Colby",
+        "lastName": "Wall",
+        "email": "colby.wall@hitachivantara.com",
+        "profileImage": "https://imgs.search.brave.com/GNgCrx-F9aeWTNh80MXp5SgcXv7gODtERCov2qFw3w4/rs:fit:880:769:1/g:ce/aHR0cHM6Ly93d3cu/cGluY2xpcGFydC5j/b20vcGljZGlyL21p/ZGRsZS8xNTctMTU3/ODE4Nl91c2VyLXBy/b2ZpbGUtZGVmYXVs/dC1pbWFnZS1wbmct/Y2xpcGFydC5wbmc",
+        "friends": []
+      }
+    ]
+  }
+
+]
