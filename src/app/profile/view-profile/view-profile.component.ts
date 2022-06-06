@@ -78,10 +78,12 @@ export class ViewProfileComponent implements OnInit, OnDestroy {
   }
 
   onShare(post: Post) {
-    var newAuthor = new User(this.currentUser.id,
-      this.currentUser.firstName + ' (shared from ' + post.author.firstName + ' ' + post.author.lastName + ')',
-      this.currentUser.lastName, this.currentUser.email, this.currentUser.profileImage, this.currentUser.friends )
-    var sharedPost = new Post((this.totalPosts.length + 1).toString(), newAuthor, post.content, [this.currentUser]);
+    const newAuthor : User = {
+      ...this.currentUser,
+      firstName: this.currentUser.firstName + ' (shared from ' + post.author.firstName + ' ' + post.author.lastName + ')'
+
+    }
+    const sharedPost = new Post((this.totalPosts.length + 1).toString(), newAuthor, post.content, [this.currentUser]);
     this.store.dispatch(new AddPost(sharedPost));
   }
 

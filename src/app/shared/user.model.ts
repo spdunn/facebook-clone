@@ -9,6 +9,11 @@ export class Friend {
   constructor(public id: string, public status: FriendStatus) {}
 }
 
-export class User {
-  constructor(public id: string, public firstName: string, public lastName: string, public email: string, public profileImage: string, public friends: Friend[]) {}
+export interface User {
+  id: string,
+  firstName: string,
+  lastName: string,
+  email: string,
+  profileImage: string,
+  friends: Friend[]
 }
