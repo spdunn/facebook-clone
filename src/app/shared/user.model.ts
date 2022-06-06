@@ -5,8 +5,9 @@ enum FriendStatus {
   friends
 }
 
-export class Friend {
-  constructor(public id: string, public status: FriendStatus) {}
+export interface Friend {
+  id: string,
+  status: FriendStatus
 }
 
 export interface User {

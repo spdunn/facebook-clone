@@ -33,8 +33,9 @@ export class FeedComponent implements OnInit, OnDestroy {
       // Only get posts from yourself or friends
       this.myPosts = posts.posts.filter((p) => {
         return (
-          this.currentUser.friends.find((f) => f.id == p.author.id) ||
-          p.author.id == this.currentUser.id
+          this.currentUser.friends.find((f) => {
+            return f.id === p.author.id && (f.status === 1 || f.status === 3)
+          }) || p.author.id == this.currentUser.id
         );
       });
     });
@@ -48,21 +49,24 @@ export class FeedComponent implements OnInit, OnDestroy {
 
   onPost(form: NgForm) {
     console.log(form);
-    let newPost: Post = new Post(
-      (this.posts.length + 1).toString(),
-      this.currentUser,
-      form.value.message,
-      [this.currentUser]
-    );
+    let newPost: Post = {
+      id: (this.posts.length + 1).toString(),
+      author: this.currentUser,
+      content: form.value.message,
+      likes: [this.currentUser]
+    };
     this.store.dispatch(new AddPost(newPost));
     form.reset();
   }
 
   onLike(post: Post) {
-    var likedPost = new Post(post.id, post.author, post.content, [
-      ...post.likes,
-      this.currentUser,
-    ]);
+    const likedPost : Post = {
+      ...post,
+      likes: [
+        ...post.likes,
+        this.currentUser,
+      ]
+    };
     console.log('post sent to reducer:', likedPost);
     this.store.dispatch(new LikePost(likedPost));
   }
@@ -78,12 +82,12 @@ export class FeedComponent implements OnInit, OnDestroy {
         post.author.lastName +
         ')',
     };
-    const sharedPost = new Post(
-      (this.posts.length + 1).toString(),
-      newAuthor,
-      post.content,
-      [this.currentUser]
-    );
+    const sharedPost : Post = {
+      id: (this.posts.length + 1).toString(),
+      author: newAuthor,
+      content: post.content,
+      likes: [this.currentUser]
+    };
     this.store.dispatch(new AddPost(sharedPost));
   }
 

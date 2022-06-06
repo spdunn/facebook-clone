@@ -1,5 +1,8 @@
 import { User } from "./user.model";
 
-export class Post {
-  constructor(public id: string, public author: User, public content: string, public likes: User[]) {}
+export interface Post {
+  id: string,
+  author: User,
+  content: string,
+  likes: User[]
 }
