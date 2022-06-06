@@ -4,8 +4,7 @@
       <img
       [src]="profileUser.profileImage"
       alt="No profile picture set"
-      class="img-responsive"
-      style="max-height: 300px;">
+      class="img-responsive profile-user-image">
   </div>
 </div>
 <div class="row">
@@ -15,17 +14,6 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-
-      <!-- <div class="btn-group" appDropdown>
-          <button type="button" class="btn btn-primary dropdown-toggle">
-              Manage Recipe <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-              <li><a (click)="onAddToShoppingList()" style="cursor: pointer;">To Shopping List</a></li>
-              <li><a style="cursor: pointer;" (click)="onEditRecipe()">Edit Recipe</a></li>
-              <li><a style="cursor: pointer;" (click)="onDeleteRecipe()">Delete Recipe</a></li>
-          </ul>
-      </div> -->
   </div>
 </div>
 <div class="row">
@@ -63,10 +51,10 @@
             <div class="media-block">
               <a class="media-left" href="#">
                 <img
-                class="img-circle img-sm"
+                class="img-circle img-sm post-author-image"
                 alt="No profile image selected"
                 [src]=post.author.profileImage
-                style="max-height: 50px;"></a>
+                ></a>
               <div class="media-body">
                 <div class="mar-btm">
                   <a href="#" class="btn-link text-semibold media-heading box-inline">{{ post.author.firstName }}</a>

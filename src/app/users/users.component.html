@@ -1,34 +1,45 @@
 <div class="row">
   <div class="col-xs-12">
-      <!-- <button class="btn btn-success" (click)="onNewRecipe()">New Recipe</button> -->
+    <!-- <button class="btn btn-success" (click)="onNewRecipe()">New Recipe</button> -->
   </div>
 </div>
-<hr>
+<hr />
 <div class="row">
-  <div class="col-xs-12" *ngFor="let user of (users | async).users; let i = index">
-      <a
+  <div
+    class="col-xs-12"
+    *ngFor="let user of (users | async).users; let i = index"
+  >
+    <a
       *ngIf="currentUser.id != user.id"
-      style="cursor: pointer;"
       routerLinkActive="active"
-      class="list-group-item clearfix">
-        <div >
-          <span class="pull-left" >
-            <img [src]="user.profileImage" alt="" class="img-responsive" style="max-height: 50px;" (click)="goToProfile(user)">
-          </span>
-          <div class="pull-left">
-              <h4 class="list-group-item-heading">{{ user.firstName }} {{ user.lastName }}</h4>
-              <p class="list-group-item-text">{{ user.email }}</p>
-          </div>
-          <!-- 4 states for friendship
+      class="list-group-item clearfix friends-user-info"
+    >
+      <div>
+        <span class="pull-left">
+          <img
+            [src]="user.profileImage"
+            alt=""
+            class="img-responsive friends-user-image"
+            (click)="goToProfile(user)"
+          />
+        </span>
+        <div class="pull-left">
+          <h4 class="list-group-item-heading">
+            {{ user.firstName }} {{ user.lastName }}
+          </h4>
+          <p class="list-group-item-text">{{ user.email }}</p>
+        </div>
+        <!-- 4 states for friendship
           0. Not friends
           1. Friend request sent (disabled)
           2. Friend request received
           3. Friends -->
-          <div class="pull-right">
-            <button
+        <div class="pull-right">
+          <button
             class="btn btn-primary"
             [disabled]="checkFriendStatus(user) == 1"
-            (click)="onFriendRequest(user)">
+            (click)="onFriendRequest(user)"
+          >
             <div [ngSwitch]="checkFriendStatus(user)">
               <div *ngSwitchCase="0">Send Friend Request</div>
               <div *ngSwitchCase="1">Friend Request Sent</div>
@@ -36,10 +47,9 @@
               <div *ngSwitchCase="3">Friends</div>
               <div *ngSwitchDefault>Send Friend Request</div>
             </div>
-            </button>
-          </div>
-
+          </button>
         </div>
-      </a>
+      </div>
+    </a>
   </div>
 </div>

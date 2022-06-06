@@ -1,13 +1,6 @@
 <div class="row">
   <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <!-- <div class="alert alert-danger" *ngIf="error">
-          <p>{{ error }}</p>
-      </div> -->
-      <!-- <app-alert [message]="error" *ngIf="error" (close)="onHandleError()"></app-alert> -->
       <ng-template appPlaceholder></ng-template>
-      <!-- <div *ngIf="isLoading" style="text-align: center;">
-          <app-loading-spinner></app-loading-spinner>
-      </div> -->
       <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
           <div class="form-group" *ngIf="isLoginMode">
             <div class="row">
@@ -16,16 +9,10 @@
                   <img
                   [src]="user.profileImage"
                   alt="No image found"
-                  class="img-responsive"
-                  style="max-height: 300px;"
+                  class="img-responsive login-user-image"
                   (click)="login(user)">
                   <h3>{{ user.firstName }}</h3>
-                  <input type="hidden" value="user.email">
-                  <!-- <button
-                  class="btn btn-primary"
-                  type="button"
-                  (click)="login(user)"
-                  >Login with this user</button> -->
+                  <input type="hidden" value="user.id">
                 </div>
             </div>
             </div>
