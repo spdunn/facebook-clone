@@ -6,7 +6,7 @@ import { Observable, Subscription } from 'rxjs';
 import { Post } from '../shared/post.model';
 import { Friend, User } from '../shared/user.model';
 import * as fromApp from '../store/app.reducer';
-import { AddPost, LikePost } from './store/feed.actions';
+import { AddPost, LikePost, SharePost } from './store/feed.actions';
 
 @Component({
   selector: 'app-feed',
@@ -43,7 +43,7 @@ export class FeedComponent implements OnInit, OnDestroy {
 
   hasUserLiked(post: Post) {
     return post.likes.find((u) => {
-      return u.email == this.currentUser.email;
+      return u.id == this.currentUser.id;
     });
   }
 
@@ -60,35 +60,37 @@ export class FeedComponent implements OnInit, OnDestroy {
   }
 
   onLike(post: Post) {
-    const likedPost : Post = {
-      ...post,
-      likes: [
-        ...post.likes,
-        this.currentUser,
-      ]
-    };
-    console.log('post sent to reducer:', likedPost);
-    this.store.dispatch(new LikePost(likedPost));
+    // const likedPost : Post = {
+    //   ...post,
+    //   likes: [
+    //     ...post.likes,
+    //     this.currentUser,
+    //   ]
+    // };
+    // console.log('post sent to reducer:', likedPost);
+    const user = this.currentUser;
+    this.store.dispatch(new LikePost({post, user}));
   }
 
   onShare(post: Post) {
-    const newAuthor: User = {
-      ...this.currentUser,
-      firstName:
-        this.currentUser.firstName +
-        ' (shared from ' +
-        post.author.firstName +
-        ' ' +
-        post.author.lastName +
-        ')',
-    };
-    const sharedPost : Post = {
-      id: (this.posts.length + 1).toString(),
-      author: newAuthor,
-      content: post.content,
-      likes: [this.currentUser]
-    };
-    this.store.dispatch(new AddPost(sharedPost));
+    // const newAuthor: User = {
+    //   ...this.currentUser,
+    //   firstName:
+    //     this.currentUser.firstName +
+    //     ' (shared from ' +
+    //     post.author.firstName +
+    //     ' ' +
+    //     post.author.lastName +
+    //     ')',
+    // };
+    // const sharedPost : Post = {
+    //   id: (this.posts.length + 1).toString(),
+    //   author: newAuthor,
+    //   content: post.content,
+    //   likes: [this.currentUser]
+    // };
+    const user = this.currentUser;
+    this.store.dispatch(new SharePost({post, user}));
   }
 
   ngOnDestroy(): void {
