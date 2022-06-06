@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { User } from '../shared/user.model';
-import { Login } from '../users/store/users.actions';
+import { AddUser, Login } from '../users/store/users.actions';
 import * as fromApp from '../store/app.reducer';
 
 @Component({
@@ -35,6 +35,10 @@ export class LoginComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     console.log(form);
+    if (!this.isLoginMode) {
+      this.store.dispatch(new AddUser(form.value))
+      this.router.navigate(['/feed'])
+    }
   }
 
 }
