@@ -13,12 +13,12 @@ import * as fromApp from './store/app.reducer'
 import { UsersModule } from './users/users.module';
 import { ProfileModule } from './profile/profile.module';
 import { UsersEffects } from './users/store/users.effects';
+import { FeedModule } from './feed/feed.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FeedComponent,
     HeaderComponent,
     LoginComponent
   ],
@@ -30,7 +30,8 @@ import { UsersEffects } from './users/store/users.effects';
     StoreModule.forRoot(fromApp.appReducer),
     EffectsModule.forRoot([UsersEffects]),
     UsersModule,
-    ProfileModule
+    ProfileModule,
+    FeedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

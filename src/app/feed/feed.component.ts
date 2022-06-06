@@ -60,35 +60,11 @@ export class FeedComponent implements OnInit, OnDestroy {
   }
 
   onLike(post: Post) {
-    // const likedPost : Post = {
-    //   ...post,
-    //   likes: [
-    //     ...post.likes,
-    //     this.currentUser,
-    //   ]
-    // };
-    // console.log('post sent to reducer:', likedPost);
     const user = this.currentUser;
     this.store.dispatch(new LikePost({post, user}));
   }
 
   onShare(post: Post) {
-    // const newAuthor: User = {
-    //   ...this.currentUser,
-    //   firstName:
-    //     this.currentUser.firstName +
-    //     ' (shared from ' +
-    //     post.author.firstName +
-    //     ' ' +
-    //     post.author.lastName +
-    //     ')',
-    // };
-    // const sharedPost : Post = {
-    //   id: (this.posts.length + 1).toString(),
-    //   author: newAuthor,
-    //   content: post.content,
-    //   likes: [this.currentUser]
-    // };
     const user = this.currentUser;
     this.store.dispatch(new SharePost({post, user}));
   }

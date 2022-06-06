@@ -49,7 +49,7 @@ export class ViewProfileComponent implements OnInit, OnDestroy {
         );
       });
 
-      console.log('here are my friend: ', this.friends);
+      console.log('here are my friends: ', this.friends);
     });
     this.feedSub = this.store.select('feed').subscribe((feed) => {
       this.userPosts = feed.posts.filter((p) => p.author.id == this.profileId);
@@ -61,7 +61,6 @@ export class ViewProfileComponent implements OnInit, OnDestroy {
     this.router.navigate(['edit'], { relativeTo: this.route });
   }
 
-  // Outsource these functions to service/ngrx later
   hasUserLiked(post: Post) {
     return post.likes.find((u) => {
       return u.id == this.currentUser.id;
@@ -69,35 +68,11 @@ export class ViewProfileComponent implements OnInit, OnDestroy {
   }
 
   onLike(post: Post) {
-    // const likedPost : Post = {
-    //   ...post,
-    //   likes: [
-    //     ...post.likes,
-    //     this.currentUser,
-    //   ]
-    // };
-    // console.log('post sent to reducer:', likedPost);
     const user = this.currentUser;
     this.store.dispatch(new LikePost({post, user}));
   }
 
   onShare(post: Post) {
-    // const newAuthor: User = {
-    //   ...this.currentUser,
-    //   firstName:
-    //     this.currentUser.firstName +
-    //     ' (shared from ' +
-    //     post.author.firstName +
-    //     ' ' +
-    //     post.author.lastName +
-    //     ')',
-    // };
-    // const sharedPost : Post = {
-    //   id: (this.totalPosts.length + 1).toString(),
-    //   author: newAuthor,
-    //   content: post.content,
-    //   likes: [this.currentUser]
-    // };
     const user = this.currentUser;
     this.store.dispatch(new SharePost({post, user}));
   }
