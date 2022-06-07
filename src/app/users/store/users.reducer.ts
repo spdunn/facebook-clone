@@ -20,11 +20,13 @@ export function usersReducer(
     case UserActions.ADD_USER:
       if (
         state.users.find((user) => {
-          return user.id == action.payload.id;
+          return user.email == action.payload.email;
         })
       )
         return state;
+        return state;
 
+    case UserActions.ADD_USER_SUCCESS:
       const newUser: User = {
         ...action.payload,
         id: (state.users.length + 1).toString(),
@@ -35,6 +37,9 @@ export function usersReducer(
         users: [...state.users, newUser],
         currentUser: newUser,
       };
+
+    case UserActions.ADD_USER_FAILURE:
+      return state;
 
     case UserActions.UPDATE_USER:
       const index = state.users.findIndex((user) => {

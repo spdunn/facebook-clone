@@ -68,13 +68,11 @@ export class ViewProfileComponent implements OnInit, OnDestroy {
   }
 
   onLike(post: Post) {
-    const user = this.currentUser;
-    this.store.dispatch(new LikePost({post, user}));
+    this.store.dispatch(new LikePost({post: post, user: this.currentUser}));
   }
 
   onShare(post: Post) {
-    const user = this.currentUser;
-    this.store.dispatch(new SharePost({post, user}));
+    this.store.dispatch(new SharePost({post: post, user: this.currentUser}));
   }
 
   ngOnDestroy(): void {

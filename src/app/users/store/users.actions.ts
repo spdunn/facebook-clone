@@ -1,16 +1,16 @@
-import { Action } from "@ngrx/store";
-import { User } from "src/app/shared/user.model";
+import { Action } from '@ngrx/store';
+import { User } from 'src/app/shared/user.model';
 
 export const ADD_USER = '[USER] Add User';
 export const ADD_USER_SUCCESS = '[USER] Add User Success';
 export const ADD_USER_FAILURE = '[USER] Add User Failure';
-export const UPDATE_USER = '[USER] Update User'
-export const UPDATE_USER_SUCCESS = '[USER] Update User Success'
-export const UPDATE_USER_FAILURE = '[USER] Update User Failure'
-export const LOGIN = '[USER] Login'
+export const UPDATE_USER = '[USER] Update User';
+export const UPDATE_USER_SUCCESS = '[USER] Update User Success';
+export const UPDATE_USER_FAILURE = '[USER] Update User Failure';
+export const LOGIN = '[USER] Login';
 // export const LOGIN_SUCCESS = '[USER] Login Success'
 // export const LOGIN_FAILURE = '[USER] Login Failure'
-export const LOGOUT = '[USER] Logout'
+export const LOGOUT = '[USER] Logout';
 
 // Log in as given user
 export class Login implements Action {
@@ -22,12 +22,13 @@ export class Login implements Action {
 // Logout and return to unauthorized site
 export class Logout implements Action {
   readonly type = LOGOUT;
-
 }
 
 // Create new user
+// Effects not really necessary as we're simply adding user to store
+// but good practice
 export class AddUser implements Action {
-  readonly type = ADD_USER
+  readonly type = ADD_USER;
 
   constructor(public payload: User) {}
 }
@@ -35,13 +36,13 @@ export class AddUser implements Action {
 export class AddUserSuccess implements Action {
   readonly type = ADD_USER_SUCCESS;
 
-
+  constructor(public payload: User) {}
 }
 
 export class AddUserFailure implements Action {
   readonly type = ADD_USER_FAILURE;
 
-
+  constructor(public payload: { errorMessage: string }) {}
 }
 
 // Update existing user
@@ -51,4 +52,10 @@ export class UpdateUser implements Action {
   constructor(public payload: User) {}
 }
 
-export type UserActions = AddUser | UpdateUser | Login | Logout;
+export type UserActions =
+  | AddUser
+  | AddUserSuccess
+  | AddUserFailure
+  | UpdateUser
+  | Login
+  | Logout;
