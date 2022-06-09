@@ -13,6 +13,7 @@ import { UsersModule } from './users/users.module';
 import { ProfileModule } from './profile/profile.module';
 import { UsersEffects } from './users/store/users.effects';
 import { FeedModule } from './feed/feed.module';
+import { AuthGuard } from './auth-guard.service';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import { FeedModule } from './feed/feed.module';
     ProfileModule,
     FeedModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

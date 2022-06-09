@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
+
 import { Friend, User } from '../shared/user.model';
 import * as fromApp from '../store/app.reducer';
 import { UpdateUser } from './store/users.actions';
@@ -26,7 +27,7 @@ export class UsersComponent implements OnInit, OnDestroy {
     this.users = this.store.select('users')
     this.userSub = this.store.select('users').subscribe(
       users => {
-        this.currentUser = {...users.currentUser};
+        this.currentUser = users.currentUser;
         this.usersList = [...users.users];
       }
     )

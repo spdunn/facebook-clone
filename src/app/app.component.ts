@@ -14,7 +14,7 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.router.navigate([''])
+    // this.router.navigate([''])
 
     // rxjs operators practice
     // const obs: Observable<number> = of(1, 2, 3);
