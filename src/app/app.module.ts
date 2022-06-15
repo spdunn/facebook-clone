@@ -14,6 +14,7 @@ import { ProfileModule } from './profile/profile.module';
 import { UsersEffects } from './users/store/users.effects';
 import { FeedModule } from './feed/feed.module';
 import { AuthGuard } from './auth-guard.service';
+import { ProfileResolver } from './profile/profile-resolver.service';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { AuthGuard } from './auth-guard.service';
     ProfileModule,
     FeedModule
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, ProfileResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
