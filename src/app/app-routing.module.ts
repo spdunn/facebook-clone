@@ -7,7 +7,8 @@ const appRoutes: Routes = [
   {path: "auth", component: LoginComponent},
   {path: "feed", loadChildren: () => import(`./feed/feed.module`).then(m => m.FeedModule)},
   {path: "profile", loadChildren: () => import(`./profile/profile.module`).then(m => m.ProfileModule)},
-  {path: "connect", loadChildren: () => import(`./users/users.module`).then(m => m.UsersModule)}
+  {path: "connect", loadChildren: () => import(`./users/users.module`).then(m => m.UsersModule)},
+  {path: "weather", loadChildren: () => import(`./weather/weather.module`).then(m => m.WeatherModule)}
 ];
 
 @NgModule({

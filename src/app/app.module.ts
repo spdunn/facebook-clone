@@ -15,6 +15,7 @@ import { UsersEffects } from './users/store/users.effects';
 import { FeedModule } from './feed/feed.module';
 import { AuthGuard } from './auth-guard.service';
 import { ProfileResolver } from './profile/profile-resolver.service';
+import { WeatherModule } from './weather/weather.module';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ProfileResolver } from './profile/profile-resolver.service';
     EffectsModule.forRoot([UsersEffects]),
     UsersModule,
     ProfileModule,
-    FeedModule
+    FeedModule,
+    WeatherModule
   ],
   providers: [AuthGuard, ProfileResolver],
   bootstrap: [AppComponent]
