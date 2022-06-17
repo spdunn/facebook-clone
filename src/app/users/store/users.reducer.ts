@@ -16,6 +16,13 @@ export function usersReducer(
   state = initialState,
   action: UserActions.UserActions
 ) {
+  function storeUser(user: User) {
+    localStorage.setItem('userData', JSON.stringify(user));
+  }
+  function removeUser() {
+    localStorage.removeItem('userData');
+  }
+
   switch (action.type) {
     case UserActions.ADD_USER:
       if (
@@ -32,6 +39,7 @@ export function usersReducer(
         id: (state.users.length + 1).toString(),
         friends: [],
       };
+      storeUser(newUser);
       return {
         ...state,
         users: [...state.users, newUser],
@@ -64,12 +72,14 @@ export function usersReducer(
       };
 
     case UserActions.LOGIN:
+      storeUser(action.payload);
       return {
         ...state,
         currentUser: { ...action.payload },
       };
 
     case UserActions.LOGOUT:
+      removeUser();
       return {
         ...state,
         currentUser: null,
